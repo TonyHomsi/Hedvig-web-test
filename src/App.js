@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// import axios from 'axios';
+
+import {PerilList} from './components/perils-list/perils-list.component.jsx';
+import "./App.css";
+
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      perils: []
+    }
+  }
+  
+  componentDidMount(){
+    fetch(`https://hedvig-staging-rest-api.vercel.app/api/perils?contractType=SE_APARTMENT_RENT&locale=en_SE`)
+    .then(response => response.json())
+    .then(perils => this.setState({ perils: perils}))
+  }
+
+
+  render() {
+    return (
+      <div class="title">
+        <h2> We have you coverd </h2>
+        <h3>Extensive coverage for you and your family, your house and your belongings. 
+          All risk is always included. Click the icons for more info. </h3>
+      <div className="App">
+        <PerilList perils={this.state.perils} />
+      </div>
+      </div>
+    );
+  }
 }
 
 export default App;

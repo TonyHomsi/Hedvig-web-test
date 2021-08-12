@@ -1,0 +1,8 @@
+.css-dsn619 {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin-left: -0.5rem;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
