@@ -1,13 +1,21 @@
-import React from 'react'
+import React from "react";
 
-import './peril.styles.css'
+import "./peril.styles.css";
 
-export const Peril = (props) => (
-    <div class="css-deajr0">
-        <button class="css-m4oz1q">
-            <img src={props.peril.icon.variants.dark.svgUrl} alt="" width="24" height="24" class="css-673u28" />
-                <h4 class="css-3d9q9a etzsc9u3">{props.peril.title}</h4>
-        </button>
+export const Peril = ({peril, onClick}) => {
+  return (
+    <div className="peril">
+      <button onClick={onClick} className="btn-peril">
+      {/* <button className="css-m4oz1q"> */}
+        <img
+          src={peril.icon.variants.light.svgUrl}
+          alt=""
+          width="24"
+          height="24"
+          className="icon"
+        />
+        <h4>{peril.title}</h4>
+      </button>
     </div>
-   
-)
+  );
+}

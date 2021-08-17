@@ -1,12 +1,12 @@
 import React from "react";
 
 import {Peril} from '../peril/peril.component'
-import "./perils-list.style..css";
+import "./perils-list.style.css";
 
-export const PerilList = (props) => (
+export const PerilList = ({perils = [], onItemClick}) => (
   <div className="css-dsn619">
-    {props.perils.map((peril) => (
-      <Peril key={peril.id} peril={peril}/>
+    {perils.map((peril, idx) => (
+      <Peril key={`${idx}-${peril.title}`} peril={peril} onClick={() => onItemClick(peril)}/>
     ))}
   </div>
 );

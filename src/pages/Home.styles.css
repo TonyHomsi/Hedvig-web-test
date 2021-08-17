@@ -1,0 +1,19 @@
+.page {
+    max-width: 1200px;
+    padding: 32px;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: FavoritStd, sans-serif;;
+
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  line-height: 1.626rem;
+  color: rgb(65, 65, 80);
+  margin-top: 2rem;
+  max-width: 540px;
+  font-weight: normal;
+}
