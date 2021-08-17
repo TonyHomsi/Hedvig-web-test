@@ -41,7 +41,7 @@ const Home = () => {
         </div>
         {selectedPeril && (
           <PopupDesc onClose={handlePopupClose}>
-            <div>{selectedPeril.description}</div>
+            <div className="description">{selectedPeril.description}</div>
           </PopupDesc>
         )}
       </div>
